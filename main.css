@@ -1,0 +1,58 @@
+html,body {
+  height: 100%;
+}
+
+.loading {
+  opacity: 0;
+  width: 100%;
+  text-align: center;
+  transition: opacity ease-in-out 0.3s;
+  margin: 1.5rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  opacity: 1 !important;
+}
+
+.information-display {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
+.information-display > *:not(:first-child) {
+  margin-left: 0.2rem;
+}
+
+#cityName, #description, #icon, #googleMaps {
+  opacity: 0;
+  transition: opacity ease-in-out 0.3s;
+}
+
+#description {
+  text-transform: capitalize;
+}
+
+.googleMapsContainer {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+  background: rgb(15,15,15);
+}
+
+#googleMaps {
+  min-height: 500px;
+  width: 100% !important;
+  background-color: #212121 !important;
+  /* position: absolute !important;
+  bottom: 0;
+  left: 0; */
+}
+
+#cityName {
+  font-size: 2.5rem;
+}

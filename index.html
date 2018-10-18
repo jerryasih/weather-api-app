@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Weather App</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+    
+    <div class="container">
+      <div class="row">
+
+        <div class="col-12">
+          <header>
+            <h1>OpenWeatherMap.org and Google Maps API application</h1>
+          </header>
+        </div>
+        
+        <div class="col-12">
+          
+          <!-- List of states gotten from JS file -->
+          <div class="form-group">
+            <label for=""></label>
+            <select class="form-control" name="states-selector" id="statesSelector">
+              <option value="default">Loading...</option>
+            </select>
+          </div>
+          
+          <div class="select-btn text-center">
+            <button type="button" class="btn btn-dark btn-lg" id="getWeatherDataBtn">View details</button>
+          </div>
+          
+          <div class="weather-data">
+            <div class="loading hidden" id="loading">
+              <span><i class="fas fa-spinner fa-spin fa-4x"></i></span>
+              <p class="lead">Loading</p>
+            </div>
+
+            <div class="row">
+              <div class="col-12">
+                
+                <div class="information-display">
+                  <div id="cityName"></div>
+                  <div id="description"></div>
+                  <div id="icon">
+                    <img src="" alt="Weather icon">
+                  </div>
+                </div>
+              
+              </div>
+            
+            </div>
+            
+          </div>
+          
+        </div>
+      </div>
+      
+    </div>
+    
+    <div class="googleMapsContainer">
+      <div id="googleMaps" class="hidden"></div>
+    </div>
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    
+    <!-- FontAwesome JS -->
+    
+    <script defer src="https://use.fontawesome.com/releases/v5.1.1/js/all.js" integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a" crossorigin="anonymous"></script>
+
+    <!-- Google Maps API JS -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABeFgKbc1CPeHbDQerpXOkfFSbX4-jYYI&callback=initMap"
+    async defer></script>
+    
+    <script src="main.js"></script>
+  </body>
+  </html>
