@@ -147,7 +147,7 @@ let states = [
 
 let apiKey = "6a0796b8359025f367ca9f9cc36e1598";
 let apiUrl =
-  "http://api.openweathermap.org/data/2.5/weather?id=";
+  "https://api.openweathermap.org/data/2.5/weather?id=";
 let selectContainer = document.querySelector('#statesSelector');
 let btn = document.querySelector('#getWeatherDataBtn');
 let weatherData = null;
@@ -173,7 +173,6 @@ function init() {
       option.setAttribute('value', states[i].cityID);
     }
     else {
-      // set default city ID to Lagos, NG
       option.setAttribute('value', '');
       option.setAttribute('disabled', 'true');
     }
@@ -187,7 +186,7 @@ function init() {
 
 
 // Function to initialize map data
-function initMap(lat, long) {
+function loadMap(lat, long) {
   map = new google.maps.Map(document.getElementById('googleMaps'), {
     center: {
       lat: lat,
@@ -198,9 +197,8 @@ function initMap(lat, long) {
 }
 
 
-
-
 function loadWeather(id) {
+  
   // display loading spinner
   loading.classList.remove('hidden');
   loading.classList.add('visible');
@@ -211,7 +209,7 @@ function loadWeather(id) {
   icon.classList.remove('visible');
   googleMaps.classList.remove('visible');
   
-  fetch(apiUrl + id + '&appid=' + apiKey)
+  fetch(`${apiUrl}${id}&appid=${apiKey}`)
   
   .then((response) => response.json())
   
@@ -230,7 +228,7 @@ function loadWeather(id) {
       
       let img = icon.getElementsByTagName('img');
       
-      let currentIconUrl = iconUrl + weatherData.weather[0].icon + '.png';
+      let currentIconUrl = `${iconUrl}${weatherData.weather[0].icon}.png`;
       
       img[0].setAttribute('src', currentIconUrl);
 
@@ -239,7 +237,7 @@ function loadWeather(id) {
       icon.classList.add('visible');
 
       // Load map
-      initMap(weatherData.coord.lat, weatherData.coord.lon);
+      loadMap(weatherData.coord.lat, weatherData.coord.lon);
 
       googleMaps.classList.remove('hidden');
       googleMaps.classList.add('visible');

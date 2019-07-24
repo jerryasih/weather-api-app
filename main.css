@@ -56,3 +56,7 @@ html,body {
 #cityName {
   font-size: 2.5rem;
 }
+
+.form-inline > * {
+  margin: 0.6rem 1rem;
+}
